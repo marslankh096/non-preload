@@ -1,2 +1,1 @@
-<img src="output.PNG" width="30%">
- readme
+<img src="output.PNG" width="30%"> 
