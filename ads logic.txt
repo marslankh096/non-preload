@@ -1,0 +1,23 @@
+Bilkul bhai 👍 main tumhari poori flow (Splash + Ads + Strings + Handler + Activities) sirf 10 lines me summary deta hoon:
+
+strings.xml me tumne Google ke test IDs diye hain (App ID, Banner, Interstitial, Native). ✅
+
+AndroidManifest.xml me App ID meta-data properly add hai (com.google.android.gms.ads.APPLICATION_ID). ✅
+
+Ads.java ek helper class hai jo InterstitialAd load aur show handle karti hai.
+
+loadAd() → ek AdRequest banata hai aur ad async load karta hai (success ya fail callbacks).
+
+show() → agar ad loaded hai to display karega, warna onFailed() callback trigger karega.
+
+SplashActivity app ka entry point hai jo pehle Ads.loadAd() call karta hai.
+
+Handler ka use karke 4 sec ka fallback timer rakha hai (agar ad na dikhe to MainActivity).
+
+Agar ad successfully show ho jaye → dismiss hote hi MainActivity open ho jati hai.
+
+Agar ad fail ho ya timeout ho jaye → bhi MainActivity open ho jati hai.
+
+MainActivity me agar user back press kare to fir se SplashActivity start ho jati hai.
+
+👉 Matlab: Ad optional hai → load ho jaye to dikhega, warna app 4 sec ke andar guaranteed MainActivity me chala jayega.
