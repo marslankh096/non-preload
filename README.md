@@ -1,1 +1,1 @@
-<img src="output.PNG" width="30%"> 
+![App Flow Diagram](output.png)
